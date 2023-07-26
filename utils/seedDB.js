@@ -62,11 +62,18 @@ const seedDB = async () => {
     });
 
     // Set users for the movies
-    dummyMovie1.user = dummyUser1._id;
-    dummyMovie2.user = dummyUser3._id;
+    dummyMovie1.userId = dummyUser1._id;
+    dummyMovie2.userId = dummyUser3._id;
 
     await dummyMovie1.save();
     await dummyMovie2.save();
+
+    // Update the user's movies array
+    dummyUser1.movies.push(dummyMovie1._id);
+    dummyUser3.movies.push(dummyMovie2._id, dummyMovie3._id);
+
+    await dummyUser1.save();
+    await dummyUser3.save();
 
     console.log('Data inserted successfully');
 
