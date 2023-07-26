@@ -5,7 +5,7 @@
 - **cors**: Enables Cross-Origin Resource Sharing (CORS) for handling cross-domain data sharing.
 - **express**: A popular web application framework for Node.js, simplifying route creation and request handling.
 - **express-async-handler**: A utility module that simplifies error handling for asynchronous request handlers in Express.
-- ****:
+- **mongoose**: An Object Data Modeling (ODM) library for Node.js, designed to work with MongoDB, a NoSQL database. 
 
 ##### DevDependencies
 
@@ -25,6 +25,10 @@ npm start
 ```
 
 
-## /database/utils/configDB.js:
+## /utils/configDB.js:
 ```
+const url = "your MongoDB Url";
 
+module.exports = {
+    url,
+}
